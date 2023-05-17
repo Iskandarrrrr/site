@@ -1,0 +1,20 @@
+<div class="col">
+    <div class="card">
+        <div class="card-header bg-dark text-light d-flex justify-content-between">
+            <div>Категория: {{ article.category }}</div>
+            <div>Просмотры: {{ article.views }}</div>
+        </div>
+        <a href="{% url 'article' article.pk %}">
+            <img height="200" src="{{ article.get_photo }}" class="card-img-top mb-1 mt-1" alt="...">
+        </a>
+        <div class="card-body">
+            <h5 class="card-title">{{ article.title }}</h5>
+            <p class="card-text">{{ article.content|truncatewords:20 }}</p>
+        </div>
+        <div class="card-footer bg-dark text-light">
+            <div>
+                Дата опубликование: {{ article.updated_at }}
+            </div>
+        </div>
+    </div>
+</div>
